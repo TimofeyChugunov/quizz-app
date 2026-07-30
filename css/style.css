@@ -34,17 +34,14 @@ body {
 }
 
 h1, h2, h3 {
-  color: #2d3748;
+  color: #1a202c;
   margin-bottom: 20px;
   font-weight: 700;
 }
 
 h1 {
   font-size: 42px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #2d3748;
 }
 
 h2 {
@@ -162,7 +159,7 @@ input:focus, select:focus, textarea:focus {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #4a5568;
+  color: #2d3748;
   font-size: 15px;
 }
 
@@ -181,7 +178,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .nav a {
-  color: #667eea;
+  color: #4a5568;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -204,7 +201,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .nav a:hover {
-  color: #764ba2;
+  color: #667eea;
 }
 
 /* Карточки квизов */
@@ -232,7 +229,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .quiz-card .meta {
-  color: #718096;
+  color: #4a5568;
   font-size: 14px;
   display: flex;
   gap: 15px;
@@ -293,6 +290,14 @@ input:focus, select:focus, textarea:focus {
   justify-content: center;
   padding: 30px;
   text-align: center;
+  color: white;
+}
+
+.game-screen h1,
+.game-screen h2,
+.game-screen p {
+  color: white !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .room-code {
