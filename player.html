@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Игра — QuizApp</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="game-screen">
+    <!-- Ожидание -->
+    <div id="waitingScreen">
+      <h1 style="color: white; font-size: 36px;">🎮 <span id="quizTitle">Квиз</span></h1>
+      <p style="color: white; font-size: 20px; margin: 20px 0;">Ожидание начала...</p>
+      <p style="color: white;">Игроков в комнате: <span id="playersCount">0</span></p>
+    </div>
+
+    <!-- Вопрос -->
+    <div id="questionScreen" class="hidden" style="width: 100%; max-width: 700px;">
+      <div style="color: white; font-size: 18px; margin-bottom: 10px;">
+        Вопрос <span id="qIndex">1</span>/<span id="qTotal">10</span>
+        &nbsp;|&nbsp; ⏱ <span id="timer">20</span> сек
+      </div>
+      <div class="timer-bar"><div class="timer-bar-fill" id="timerBar"></div></div>
+      <div class="card">
+        <h2 id="questionText" style="font-size: 24px;"></h2>
+        <img id="questionImage" class="question-image hidden">
+      </div>
+      <div class="answer-grid" id="answersGrid"></div>
+    </div>
+
+    <!-- Ответ принят -->
+    <div id="answeredScreen" class="hidden">
+      <h1 style="color: white; font-size: 48px;" id="answerResult">✓</h1>
+      <p style="color: white; font-size: 20px;">Ожидание остальных...</p>
+    </div>
+
+    <!-- Лидерборд после вопроса -->
+    <div id="revealScreen" class="hidden">
+      <div class="leaderboard">
+        <h2>🏆 Лидерборд</h2>
+        <div id="revealLeaderboard"></div>
+        <p style="margin-top: 15px; color: #666;">Ваш счёт: <strong id="myScore">0</strong></p>
+      </div>
+    </div>
+
+    <!-- Финал -->
+    <div id="finalScreen" class="hidden">
+      <h1 style="color: white; font-size: 48px;">🏆 Игра окончена!</h1>
+      <div class="leaderboard" id="finalLeaderboard"></div>
+      <a href="/dashboard.html" class="btn" style="margin-top: 20px;">В личный кабинет</a>
+    </div>
+
+    <!-- Комната закрыта -->
+    <div id="closedScreen" class="hidden">
+      <h1 style="color: white;">Комната закрыта</h1>
+      <a href="/dashboard.html" class="btn" style="margin-top: 20px;">В личный кабинет</a>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/player.js"></script>
+</body>
+</html>

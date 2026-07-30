@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создание квиза — QuizApp</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="/dashboard.html">← Назад в кабинет</a>
+      <h2 id="pageTitle">Создание квиза</h2>
+      <div></div>
+    </div>
+
+    <div class="card">
+      <div id="error" class="alert alert-error hidden"></div>
+      <form id="quizForm">
+        <div class="form-group">
+          <label>Название квиза *</label>
+          <input type="text" name="title" required placeholder="Например: Викторина по истории">
+        </div>
+        <div class="form-group">
+          <label>Описание</label>
+          <textarea name="description" rows="2" placeholder="Краткое описание (необязательно)"></textarea>
+        </div>
+        <div style="display: flex; gap: 15px;">
+          <div class="form-group" style="flex: 1;">
+            <label>Категория *</label>
+            <select name="category" required>
+              <option value="general">Общие знания</option>
+              <option value="science">Наука</option>
+              <option value="history">История</option>
+              <option value="geography">География</option>
+              <option value="it">IT и технологии</option>
+              <option value="movies">Кино и музыка</option>
+              <option value="sports">Спорт</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <div class="form-group" style="flex: 1;">
+            <label>Время на вопрос (сек)</label>
+            <input type="number" name="timePerQuestion" value="20" min="5" max="120">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2 style="margin: 0;">Вопросы</h2>
+        <button type="button" class="btn btn-success" id="addQuestionBtn">+ Добавить вопрос</button>
+      </div>
+      
+      <div id="questionsList"></div>
+    </div>
+
+    <div style="text-align: center; margin: 30px 0;">
+      <button type="button" class="btn" id="saveBtn" style="padding: 15px 40px; font-size: 18px;">
+        💾 Сохранить квиз
+      </button>
+    </div>
+  </div>
+
+  <!-- Подключаем JS-файл в самом конце -->
+  <script src="/js/create-quiz.js"></script>
+</body>
+</html>

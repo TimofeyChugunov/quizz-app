@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Личный кабинет — QuizApp</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div><strong id="userName"></strong> (<span id="userRole"></span>)</div>
+      <div>
+        <a href="/join.html">Присоединиться</a>
+        <a href="#" id="logoutBtn">Выйти</a>
+      </div>
+    </div>
+
+    <!-- Панель организатора -->
+    <div id="organizerPanel" class="hidden">
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2>Мои квизы</h2>
+          <a href="/create-quiz.html" class="btn btn-success">+ Создать квиз</a>
+        </div>
+        <div id="quizzesList"></div>
+      </div>
+
+      <div class="card">
+        <h2>История проведённых квизов</h2>
+        <div id="organizedHistory"></div>
+      </div>
+    </div>
+
+    <!-- Панель участника -->
+    <div id="participantPanel" class="hidden">
+      <div class="card">
+        <h2>Присоединиться к квизу</h2>
+        <p>Введите код комнаты, который показал организатор:</p>
+        <input type="text" id="roomCodeInput" placeholder="Например: 123456" maxlength="6">
+        <button class="btn" onclick="joinRoom()">Подключиться</button>
+      </div>
+
+      <div class="card">
+        <h2>История участия</h2>
+        <div id="participatedHistory"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
